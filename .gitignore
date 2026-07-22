@@ -1,0 +1,13 @@
+# Configuración local / editor
+.claude/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/
+
+# Exports y capturas que no son parte del sitio
+code.html
+screen.png
+/ChatGPT Image*.png

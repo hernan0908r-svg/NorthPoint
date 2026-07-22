@@ -1,0 +1,31 @@
+==========================================================
+  FOTOS — Landing North Point Lift
+==========================================================
+
+✅ YA ESTÁN COLOCADAS. Las 8 fotos se copiaron desde tu
+   carpeta de WhatsApp y se renombraron automáticamente.
+   No tienes que hacer nada más.
+
+Si quieres CAMBIAR alguna foto, solo reemplaza el archivo
+con el mismo nombre (misma carpeta). No hay que tocar el HTML.
+
+----------------------------------------------------------
+ARCHIVO                  ->  QUÉ MUESTRA
+----------------------------------------------------------
+01-hero.jpg              ->  Cocina -> comedor -> sala con el
+                             ventanal y el sol (FOTO PRINCIPAL).
+02-sala.jpg              ->  Sala panorámica: sofá, ukulele,
+                             espejo y consola verde.
+03-comedor.jpg           ->  Comedor: mesa redonda y sillas verdes.
+04-cocina.jpg            ->  Cocina: campana, estufa de gas y horno.
+05-habitacion.jpg        ->  Habitación con ventanal y vista verde.
+06-habitacion-2.jpg      ->  Habitación: clóset de madera y espejo.
+07-estudio.jpg           ->  Estudio: pared terracota, guitarra y
+                             escritorio.
+08-vista.jpg             ->  Lámpara de mimbre + balcón con vista
+                             a los cerros (vertical).
+
+----------------------------------------------------------
+Fuente original de las fotos:
+  Downloads\WhatsApp Unknown 2026-06-07 at 5.18.59 PM\
+(quedan ahí por si quieres usar otras de las 17 disponibles)
