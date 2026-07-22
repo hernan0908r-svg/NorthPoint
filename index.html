@@ -55,23 +55,6 @@
   .btn { transition: background-color .2s ease, border-color .2s ease, transform .12s ease; }
   .btn:active { transform: scale(.97); }
 
-  /* Scrim del hero — asegura legibilidad del texto sobre cualquier foto.
-     Capa 1: degradado inferior fuerte donde va el texto.
-     Capa 2: tinte plano sobre toda la foto para bajar las zonas claras. */
-  .hero-scrim {
-    background:
-      linear-gradient(to top, #13211A 0%, rgba(19,33,26,.96) 30%, rgba(19,33,26,.72) 54%, rgba(19,33,26,.34) 78%, rgba(19,33,26,.1) 100%),
-      linear-gradient(rgba(19,33,26,.28), rgba(19,33,26,.28));
-  }
-  @media (min-width: 768px) {
-    .hero-scrim { background:
-      linear-gradient(to top, #13211A 0%, rgba(19,33,26,.9) 32%, rgba(19,33,26,.42) 68%, rgba(19,33,26,.05) 100%),
-      linear-gradient(to right, rgba(19,33,26,.85) 0%, rgba(19,33,26,.3) 44%, rgba(19,33,26,0) 70%),
-      linear-gradient(rgba(19,33,26,.14), rgba(19,33,26,.14));
-    }
-  }
-  .hero-title { text-shadow: 0 2px 28px rgba(9,17,13,.6); }
-
   /* Punto de disponibilidad, con latido sutil */
   .live-dot { position: relative; }
   @media (prefers-reduced-motion: no-preference) {
@@ -141,7 +124,7 @@
      ⚙️  CONFIGURACIÓN RÁPIDA
      Cambia SOLO esta línea con tu número de WhatsApp (formato 57 + número, sin + ni espacios).
      ============================================================ -->
-<script>window.WA_NUMBER = "573102660424";</script>
+<script>window.WA_NUMBER = "573102662404";</script>
 
 <!-- ===================== NAV — píldora flotante ===================== -->
 <nav class="fixed top-3 md:top-6 inset-x-0 z-50 px-3 md:px-4">
@@ -174,52 +157,59 @@
   </div>
 </nav>
 
-<!-- ===================== HERO — foto a pantalla completa ===================== -->
-<header id="inicio" class="relative min-h-[100svh] flex items-end overflow-hidden bg-ink text-paper">
-  <div class="photo absolute inset-0" data-label="Foto principal — guárdala como images/HERO.jpg">
-    <img src="images/HERO.jpg" alt="Sala y comedor del apartamento, North Point Lift, Bogotá"
-         class="w-full h-full object-cover kenburns" onerror="this.style.display='none'" />
-  </div>
-  <div class="hero-scrim absolute inset-0"></div>
+<!-- ===================== HERO — panel editorial + foto enmarcada ===================== -->
+<header id="inicio" class="relative overflow-hidden bg-ink text-paper">
+  <div class="max-w-container mx-auto px-5 md:px-8 pt-28 pb-16 md:pt-40 md:pb-24">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div class="order-2 md:order-1">
+        <p class="caps text-lime flex items-center gap-2.5">
+          <span class="live-dot inline-block h-2 w-2 rounded-full bg-lime"></span>
+          Disponible ya · arriendo directo
+        </p>
 
-  <div class="relative z-10 w-full max-w-container mx-auto px-5 md:px-8 pt-28 pb-9 md:pb-20">
-    <div class="max-w-2xl">
-      <p class="caps text-lime flex items-center gap-2.5">
-        <span class="live-dot inline-block h-2 w-2 rounded-full bg-lime"></span>
-        Disponible ya · arriendo directo
-      </p>
+        <h1 class="font-display font-semibold text-[2rem] leading-[1.1] md:text-5xl lg:text-6xl md:leading-[1.04] mt-4 md:mt-6 tracking-tight">
+          Un apartamento luminoso, frente a los cerros
+        </h1>
 
-      <h1 class="hero-title font-display font-semibold text-[2rem] leading-[1.1] md:text-6xl md:leading-[1.04] mt-4 md:mt-6 tracking-tight">
-        Un apartamento luminoso, frente a los cerros
-      </h1>
+        <!-- Specs compactos — escaneo rápido en móvil -->
+        <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1 mt-4 text-paper/90 text-sm font-semibold">
+          <span>1 hab + estudio</span>
+          <span class="text-lime/90">·</span>
+          <span>1 baño</span>
+          <span class="text-lime/90">·</span>
+          <span>50 m²</span>
+          <span class="text-lime/90">·</span>
+          <span>Parqueadero</span>
+        </div>
 
-      <!-- Specs compactos — escaneo rápido en móvil -->
-      <div class="flex items-center flex-wrap gap-x-2.5 gap-y-1 mt-4 text-paper/95 text-sm font-semibold [text-shadow:0_1px_12px_rgba(9,17,13,.5)]">
-        <span>1 hab + estudio</span>
-        <span class="text-lime/80">·</span>
-        <span>1 baño</span>
-        <span class="text-lime/80">·</span>
-        <span>50 m²</span>
-        <span class="text-lime/80">·</span>
-        <span>Parqueadero</span>
+        <!-- Precio -->
+        <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="font-mono font-semibold text-[2.4rem] leading-none md:text-5xl">$2.600.000</span>
+          <span class="caps text-paper/60">COP / mes</span>
+        </div>
+        <p class="caps text-paper/50 mt-2">Administración incluida</p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-7">
+          <button data-wa class="btn inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold text-sm px-8 py-4 hover:bg-paper">
+            <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
+            Escríbeme por WhatsApp
+          </button>
+          <a href="#galeria" class="btn inline-flex items-center justify-center gap-2 rounded-full border border-paper/30 text-paper font-semibold text-sm px-8 py-4 hover:border-paper/70 hover:bg-paper/5">
+            Ver galería
+            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Precio -->
-      <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <span class="font-mono font-semibold text-[2.4rem] leading-none md:text-5xl">$2.600.000</span>
-        <span class="caps text-paper/60">COP / mes</span>
-      </div>
-      <p class="caps text-paper/50 mt-2">Administración incluida</p>
-
-      <div class="flex flex-col sm:flex-row gap-3 mt-7">
-        <button data-wa class="btn inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold text-sm px-8 py-4 hover:bg-paper">
-          <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
-          Escríbeme por WhatsApp
-        </button>
-        <a href="#galeria" class="btn inline-flex items-center justify-center gap-2 rounded-full border border-paper/30 text-paper font-semibold text-sm px-8 py-4 hover:border-paper/70 hover:bg-paper/5">
-          Ver galería
-          <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
-        </a>
+      <div class="order-1 md:order-2 relative">
+        <div class="photo aspect-[4/5] rounded-3xl" data-label="Foto principal — guárdala como images/HERO.jpg">
+          <img src="images/HERO.jpg" alt="Sala y comedor del apartamento, North Point Lift, Bogotá"
+               class="w-full h-full object-cover kenburns" onerror="this.style.display='none'" />
+        </div>
+        <span class="mark mark-tl text-lime/50"></span>
+        <span class="mark mark-tr text-lime/50"></span>
+        <span class="mark mark-bl text-lime/50"></span>
+        <span class="mark mark-br text-lime/50"></span>
       </div>
     </div>
   </div>
@@ -487,7 +477,7 @@
         <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
         Escríbeme por WhatsApp
       </button>
-      <p class="caps text-paper/50 mt-6">+57 310 266 0424 · Respuesta directa del propietario</p>
+      <p class="caps text-paper/50 mt-6">+57 310 266 2404 · Respuesta directa del propietario</p>
     </div>
   </div>
 </section>
