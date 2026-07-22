@@ -72,6 +72,15 @@
   .mark-bl { bottom: -7px; left: -7px; border-bottom: 2px solid; border-left: 2px solid; }
   .mark-br { bottom: -7px; right: -7px; border-bottom: 2px solid; border-right: 2px solid; }
 
+  /* Glow ambiental detrás de la foto del hero — luz cálida, no gradiente decorativo */
+  .hero-glow {
+    position: absolute; z-index: 0; inset: -14% -10% -10% -10%; pointer-events: none;
+    background: radial-gradient(58% 48% at 52% 30%, rgba(190,220,74,.20), rgba(190,220,74,0) 68%);
+    filter: blur(10px);
+  }
+  .hero-in-badge { transition: transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s ease; }
+  .hero-in-badge:hover { transform: translateY(-3px); box-shadow: 0 26px 50px -14px rgba(19,33,26,.6); }
+
   /* Reveal on scroll */
   @media (prefers-reduced-motion: no-preference) {
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
@@ -79,12 +88,17 @@
     .kenburns { animation: kenburns 32s ease-in-out infinite alternate; transform-origin: 60% 40%; will-change: transform; }
     @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.07); } }
 
-    /* Entrada del hero al cargar */
-    .hero-in-photo, .hero-in-text, .hero-in-badge { animation: heroFadeUp .8s cubic-bezier(.22,.61,.36,1) both; }
-    .hero-in-photo { animation-delay: .05s; }
-    .hero-in-text { animation-delay: .2s; }
-    .hero-in-badge { animation-delay: .55s; }
+    /* Glow respira lentamente */
+    .hero-glow { animation: glowPulse 7s ease-in-out infinite alternate; }
+    @keyframes glowPulse { from { opacity: .65; transform: scale(1); } to { opacity: 1; transform: scale(1.06); } }
+
+    /* Entrada del hero al cargar (la placa además flota suavemente después) */
+    .hero-in-text { animation: heroFadeUp .9s cubic-bezier(.22,.61,.36,1) .15s both; }
+    .hero-in-photo { animation: heroFadeScale 1s cubic-bezier(.22,.61,.36,1) .05s both; }
+    .hero-in-badge { animation: heroFadeUp .7s cubic-bezier(.22,.61,.36,1) .6s both, badgeFloat 5s ease-in-out 1.5s infinite; }
     @keyframes heroFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    @keyframes heroFadeScale { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
+    @keyframes badgeFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
   }
 
   /* Foco accesible y consistente */
@@ -176,17 +190,14 @@
         </p>
 
         <h1 class="font-display font-semibold text-[2rem] leading-[1.1] md:text-5xl lg:text-6xl md:leading-[1.04] mt-4 md:mt-6 tracking-tight">
-          Un apartamento luminoso, frente a los cerros
+          Tu próximo hogar, frente a los cerros
         </h1>
 
-        <!-- Precio -->
-        <div class="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <span class="font-mono font-semibold text-[2.4rem] leading-none md:text-5xl">$2.600.000</span>
-          <span class="caps text-paper/60">COP / mes</span>
-        </div>
-        <p class="caps text-paper/50 mt-2">Administración incluida</p>
+        <p class="text-paper/70 leading-relaxed max-w-md mt-5 md:mt-6">
+          Un espacio luminoso para estrenar, en un edificio nuevo del norte de Bogotá.
+        </p>
 
-        <div class="flex flex-col sm:flex-row gap-3 mt-7">
+        <div class="flex flex-col sm:flex-row gap-3 mt-8">
           <button data-wa class="btn inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold text-sm px-8 py-4 hover:bg-paper">
             <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
             Escríbeme por WhatsApp
@@ -199,6 +210,7 @@
       </div>
 
       <div class="hero-in-photo order-1 md:order-2 relative mb-8 md:mb-0">
+        <div class="hero-glow" aria-hidden="true"></div>
         <div class="photo aspect-[4/5] rounded-3xl" data-label="Foto principal — guárdala como images/HERO.jpg">
           <img src="images/HERO.jpg" alt="Sala y comedor del apartamento, North Point Lift, Bogotá"
                class="w-full h-full object-cover kenburns" onerror="this.style.display='none'" />
@@ -248,11 +260,11 @@
     <div class="reveal order-2 md:order-1">
       <p class="caps text-moss flex items-center gap-4">El apartamento <span class="h-px flex-1 max-w-[120px] bg-ink/15"></span></p>
       <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] leading-[1.15] md:leading-[1.12] mt-4 md:mt-5 mb-5 tracking-tight">
-        Espacio abierto, luz natural y una vista que se disfruta todos los días
+        Espacio abierto, luz natural y vista a los cerros
       </h2>
       <p class="text-mist leading-relaxed mb-8">
-        Cocina, comedor y sala integrados en un solo ambiente luminoso, con ventanal de piso a techo hacia los cerros.
-        <strong class="text-ink font-bold">Se entrega sin amoblar</strong>, en excelente estado, en edificio nuevo (2025).
+        Cocina, comedor y sala en un solo ambiente, con ventanal de piso a techo hacia los cerros.
+        <strong class="text-ink font-bold">Se entrega sin amoblar</strong>, en edificio nuevo de 2025.
       </p>
       <ul class="border-t border-ink/10">
         <li class="flex items-start gap-3.5 py-3.5 border-b border-ink/10"><span class="material-symbols-outlined text-lime bg-ink rounded-full p-1 text-[15px] mt-0.5 shrink-0">check</span><span>Cocina integral con campana, estufa de gas y horno empotrado</span></li>
@@ -506,7 +518,7 @@
 <div id="stickyCta" class="md:hidden fixed bottom-0 inset-x-0 z-40 px-3 pt-3">
   <button data-wa class="btn w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold caps py-4 shadow-[0_12px_35px_-6px_rgba(0,0,0,.55)]">
     <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
-    Escríbeme · $2.600.000/mes
+    Escríbeme por WhatsApp
   </button>
 </div>
 
