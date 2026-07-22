@@ -78,13 +78,20 @@
     .reveal.in { opacity: 1; transform: none; }
     .kenburns { animation: kenburns 32s ease-in-out infinite alternate; transform-origin: 60% 40%; will-change: transform; }
     @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+    /* Entrada del hero al cargar */
+    .hero-in-photo, .hero-in-text, .hero-in-badge { animation: heroFadeUp .8s cubic-bezier(.22,.61,.36,1) both; }
+    .hero-in-photo { animation-delay: .05s; }
+    .hero-in-text { animation-delay: .2s; }
+    .hero-in-badge { animation-delay: .55s; }
+    @keyframes heroFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   }
 
   /* Foco accesible y consistente */
   a:focus-visible, button:focus-visible { outline: 2px solid #BEDC4A; outline-offset: 3px; }
 
   /* Placeholder si falta una foto */
-  .photo { position: relative; background: #E4DFD0; overflow: hidden; }
+  .photo { position: relative; background: #E4DFD0; overflow: hidden; box-shadow: 0 30px 60px -24px rgba(19,33,26,.4); }
   .photo::before {
     content: attr(data-label);
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
@@ -161,7 +168,7 @@
 <header id="inicio" class="relative overflow-hidden bg-ink text-paper">
   <div class="max-w-container mx-auto px-5 md:px-8 pt-28 pb-16 md:pt-40 md:pb-24">
     <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-      <div class="order-2 md:order-1">
+      <div class="hero-in-text order-2 md:order-1">
         <p class="caps text-lime flex items-center gap-2.5">
           <span class="live-dot inline-block h-2 w-2 rounded-full bg-lime"></span>
           Disponible ya · arriendo directo
@@ -191,7 +198,7 @@
         </div>
       </div>
 
-      <div class="order-1 md:order-2 relative">
+      <div class="hero-in-photo order-1 md:order-2 relative mb-8 md:mb-0">
         <div class="photo aspect-[4/5] rounded-3xl" data-label="Foto principal — guárdala como images/HERO.jpg">
           <img src="images/HERO.jpg" alt="Sala y comedor del apartamento, North Point Lift, Bogotá"
                class="w-full h-full object-cover kenburns" onerror="this.style.display='none'" />
@@ -200,6 +207,14 @@
         <span class="mark mark-tr text-paper/25"></span>
         <span class="mark mark-bl text-paper/25"></span>
         <span class="mark mark-br text-paper/25"></span>
+
+        <div class="hero-in-badge absolute z-10 -bottom-6 left-5 md:-bottom-7 md:left-8 bg-paper text-ink rounded-2xl pl-3.5 pr-5 py-3 shadow-[0_20px_40px_-12px_rgba(19,33,26,.5)] flex items-center gap-3">
+          <span class="h-9 w-9 shrink-0 rounded-full bg-ink text-lime grid place-items-center material-symbols-outlined text-[18px] ms-fill">home</span>
+          <div class="leading-tight">
+            <p class="font-mono font-bold text-lg leading-none">$2.600.000</p>
+            <p class="caps text-mist mt-1 text-[10px]">COP / mes · admón. incluida</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
