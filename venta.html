@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
+<title>Venta Apartamento — North Point Lift, Bogotá | $2.700.000</title>
+<meta name="description" content="Apartamento en venta en North Point Lift (Cra 6 #155C-50), zona norte de Bogotá. 1 habitación + estudio, 1 baño, parqueadero, ≈45 m², vista a los cerros. Para estrenar (2025). $2.700.000, trato directo con el propietario." />
+<meta property="og:title" content="Venta Apartamento — North Point Lift, Bogotá | $2.700.000" />
+<meta property="og:description" content="1 habitación + estudio · 1 baño · parqueadero · ≈45 m² · vista a los cerros. Para estrenar. $2.700.000, trato directo con el propietario." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://north-point-lift.vercel.app/venta.html" />
+<meta property="og:image" content="https://north-point-lift.vercel.app/images/HERO.jpg" />
+<meta name="theme-color" content="#13211A" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313211A'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23BEDC4A' text-anchor='middle'%3ENP%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: "#13211A",          // verde bosque profundo — anclaje de marca
+          "ink-2": "#1E2E24",      // superficie elevada sobre ink
+          moss: "#3C5A46",         // verde medio — etiquetas, acentos sutiles
+          paper: "#F7F4EC",        // papel cálido (empata con roble)
+          stone: "#E8E0CF",        // papel más profundo, secciones alternas
+          lime: "#BEDC4A",         // lima de marca — reservado a botones de acción
+          mist: "#57604F",         // texto secundario (AA sobre paper)
+        },
+        fontFamily: {
+          display: ["Space Grotesk", "system-ui", "sans-serif"],
+          body: ["Manrope", "system-ui", "sans-serif"],
+          mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+        },
+        maxWidth: { container: "1200px" },
+      },
+    },
+  };
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+  .ms-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  body { font-family: 'Manrope', system-ui, sans-serif; }
+
+  /* El título de sección no queda oculto bajo la nav flotante al usar anclas */
+  section[id], header[id] { scroll-margin-top: 88px; }
+
+  /* Etiqueta en versalitas — la voz utilitaria del sitio */
+  .caps { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+
+  /* Botones táctiles: leve hundimiento al presionar (feedback en móvil) */
+  .btn { transition: background-color .2s ease, border-color .2s ease, transform .12s ease; }
+  .btn:active { transform: scale(.97); }
+
+  /* Punto de disponibilidad, con latido sutil */
+  .live-dot { position: relative; }
+  @media (prefers-reduced-motion: no-preference) {
+    .live-dot::after {
+      content: ""; position: absolute; inset: -4px; border-radius: 9999px;
+      border: 1px solid #BEDC4A; opacity: .6; animation: ping 2.2s cubic-bezier(0,0,.2,1) infinite;
+    }
+    @keyframes ping { 0% { transform: scale(1); opacity: .6; } 80%,100% { transform: scale(2.2); opacity: 0; } }
+  }
+
+  /* Marcas de esquina — motivo de plano arquitectónico */
+  .mark { position: absolute; width: 15px; height: 15px; pointer-events: none; }
+  .mark-tl { top: -7px; left: -7px; border-top: 2px solid; border-left: 2px solid; }
+  .mark-tr { top: -7px; right: -7px; border-top: 2px solid; border-right: 2px solid; }
+  .mark-bl { bottom: -7px; left: -7px; border-bottom: 2px solid; border-left: 2px solid; }
+  .mark-br { bottom: -7px; right: -7px; border-bottom: 2px solid; border-right: 2px solid; }
+
+  /* Glow ambiental detrás de la foto del hero — luz cálida, no gradiente decorativo */
+  .hero-glow {
+    position: absolute; z-index: 0; inset: -14% -10% -10% -10%; pointer-events: none;
+    background: radial-gradient(58% 48% at 52% 30%, rgba(190,220,74,.20), rgba(190,220,74,0) 68%);
+    filter: blur(10px);
+  }
+  .hero-in-badge { transition: transform .3s cubic-bezier(.22,.61,.36,1), box-shadow .3s ease; }
+  .hero-in-badge:hover { transform: translateY(-3px); box-shadow: 0 26px 50px -14px rgba(19,33,26,.6); }
+
+  /* Reveal on scroll */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1); }
+    .reveal.in { opacity: 1; transform: none; }
+    .kenburns { animation: kenburns 32s ease-in-out infinite alternate; transform-origin: 60% 40%; will-change: transform; }
+    @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.07); } }
+
+    /* Glow respira lentamente */
+    .hero-glow { animation: glowPulse 7s ease-in-out infinite alternate; }
+    @keyframes glowPulse { from { opacity: .65; transform: scale(1); } to { opacity: 1; transform: scale(1.06); } }
+
+    /* Entrada del hero al cargar (la placa además flota suavemente después) */
+    .hero-in-text { animation: heroFadeUp .9s cubic-bezier(.22,.61,.36,1) .15s both; }
+    .hero-in-photo { animation: heroFadeScale 1s cubic-bezier(.22,.61,.36,1) .05s both; }
+    .hero-in-badge { animation: heroFadeUp .7s cubic-bezier(.22,.61,.36,1) .6s both, badgeFloat 5s ease-in-out 1.5s infinite; }
+    @keyframes heroFadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+    @keyframes heroFadeScale { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } }
+    @keyframes badgeFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+  }
+
+  /* Foco accesible y consistente */
+  a:focus-visible, button:focus-visible { outline: 2px solid #BEDC4A; outline-offset: 3px; }
+
+  /* Placeholder si falta una foto */
+  .photo { position: relative; background: #E4DFD0; overflow: hidden; box-shadow: 0 30px 60px -24px rgba(19,33,26,.4); }
+  .photo::before {
+    content: attr(data-label);
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    color: #6b6f60; font-size: 13px; letter-spacing: .03em; text-align: center; padding: 12px;
+    font-family: 'Manrope', sans-serif;
+  }
+  .photo img { position: relative; z-index: 1; }
+
+  /* Barra CTA inferior (móvil): oculta hasta pasar el hero */
+  #stickyCta {
+    transform: translateY(160%);
+    transition: transform .38s cubic-bezier(.22,.61,.36,1);
+    padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
+  }
+  #stickyCta.show { transform: translateY(0); }
+
+  /* Lightbox */
+  #lightbox { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center;
+    background: rgba(19,33,26,.96); padding: 20px; }
+  #lightbox.open { display: flex; }
+  #lightbox img { max-width: 96vw; max-height: 86vh; object-fit: contain; box-shadow: 0 30px 80px rgba(0,0,0,.5); border-radius: 12px; }
+  #lightbox .lb-close { position: absolute; top: calc(14px + env(safe-area-inset-top)); right: 18px; color: #fff; cursor: pointer; }
+  #lightbox .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); color: #fff; cursor: pointer;
+    width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 9999px;
+    transition: background .2s ease; }
+  #lightbox .lb-nav:hover { background: rgba(255,255,255,.18); }
+  #lightbox .lb-prev { left: 14px; }
+  #lightbox .lb-next { right: 14px; }
+  #lightbox .lb-count { position: absolute; bottom: calc(18px + env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%);
+    color: #fff; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; opacity: .8; font-family: 'JetBrains Mono', monospace; }
+</style>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+<!-- ============================================================
+     ⚙️  CONFIGURACIÓN RÁPIDA
+     Cambia SOLO esta línea con tu número de WhatsApp (formato 57 + número, sin + ni espacios).
+     ============================================================ -->
+<script>window.WA_NUMBER = "573102662404";</script>
+
+<!-- ===================== NAV — píldora flotante ===================== -->
+<nav class="fixed top-3 md:top-6 inset-x-0 z-50 px-3 md:px-4">
+  <div class="max-w-container mx-auto flex items-center justify-between gap-3 rounded-full bg-ink/95 backdrop-blur-md border border-paper/10 pl-3 pr-2 md:pl-4 md:pr-3 py-2 md:py-2.5 shadow-[0_10px_35px_-8px_rgba(0,0,0,.5)]">
+    <a href="#inicio" class="flex items-center shrink-0">
+      <img src="images/logo-north-point-lift.png" alt="North Point Lift Apartamentos" class="h-9 w-9 rounded-full object-cover ring-1 ring-paper/15" />
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-[13px] font-semibold text-paper/65">
+      <a href="#apartamento" class="hover:text-paper transition-colors">Apartamento</a>
+      <a href="#plano" class="hover:text-paper transition-colors">Plano</a>
+      <a href="#galeria" class="hover:text-paper transition-colors">Galería</a>
+      <a href="#amenidades" class="hover:text-paper transition-colors">Amenidades</a>
+      <a href="#ubicacion" class="hover:text-paper transition-colors">Ubicación</a>
+    </div>
+    <a href="#contacto" class="hidden lg:inline-flex items-center rounded-full bg-lime text-ink text-[13px] font-bold px-5 py-2.5 hover:bg-paper transition-colors duration-200 whitespace-nowrap btn">
+      Agendar visita
+    </a>
+    <button id="menuBtn" class="lg:hidden text-paper h-10 w-10 grid place-items-center rounded-full hover:bg-paper/10 transition-colors" aria-label="Abrir menú" aria-expanded="false">
+      <span id="menuIcon" class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden lg:hidden mt-2 max-w-container mx-auto rounded-3xl bg-ink border border-paper/10 p-3 shadow-[0_20px_45px_-12px_rgba(0,0,0,.6)]">
+    <a href="#apartamento" class="flex items-center justify-between px-4 py-3.5 rounded-2xl text-paper/80 hover:bg-paper/5 caps">Apartamento <span class="material-symbols-outlined text-[18px] text-paper/40">chevron_right</span></a>
+    <a href="#plano" class="flex items-center justify-between px-4 py-3.5 rounded-2xl text-paper/80 hover:bg-paper/5 caps">Plano <span class="material-symbols-outlined text-[18px] text-paper/40">chevron_right</span></a>
+    <a href="#galeria" class="flex items-center justify-between px-4 py-3.5 rounded-2xl text-paper/80 hover:bg-paper/5 caps">Galería <span class="material-symbols-outlined text-[18px] text-paper/40">chevron_right</span></a>
+    <a href="#amenidades" class="flex items-center justify-between px-4 py-3.5 rounded-2xl text-paper/80 hover:bg-paper/5 caps">Amenidades <span class="material-symbols-outlined text-[18px] text-paper/40">chevron_right</span></a>
+    <a href="#ubicacion" class="flex items-center justify-between px-4 py-3.5 rounded-2xl text-paper/80 hover:bg-paper/5 caps">Ubicación <span class="material-symbols-outlined text-[18px] text-paper/40">chevron_right</span></a>
+    <a href="#contacto" class="block mt-2 text-center rounded-full bg-lime text-ink font-bold py-4 caps btn">Agendar visita</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO — panel editorial + foto enmarcada ===================== -->
+<header id="inicio" class="relative overflow-hidden bg-ink text-paper">
+  <div class="max-w-container mx-auto px-5 md:px-8 pt-28 pb-16 md:pt-40 md:pb-24">
+    <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <div class="hero-in-text order-2 md:order-1">
+        <p class="caps text-lime flex items-center gap-2.5">
+          <span class="live-dot inline-block h-2 w-2 rounded-full bg-lime"></span>
+          En venta · trato directo
+          <span class="h-px flex-1 max-w-[120px] bg-paper/20 ml-1"></span>
+        </p>
+
+        <h1 class="font-display font-semibold text-[2rem] leading-[1.1] md:text-5xl lg:text-6xl md:leading-[1.04] mt-4 md:mt-6 tracking-tight">
+          Tu apartamento para estrenar, en el Norte de Bogotá
+        </h1>
+
+        <p class="text-paper/70 leading-relaxed max-w-md mt-5 md:mt-6">
+          Un apartamento nuevo con vista a los cerros, ideal para vivir o invertir.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-8">
+          <button data-wa class="btn inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold text-sm px-8 py-4 hover:bg-paper">
+            <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
+            Escríbeme por WhatsApp
+          </button>
+          <a href="#galeria" class="btn inline-flex items-center justify-center gap-2 rounded-full border border-paper/30 text-paper font-semibold text-sm px-8 py-4 hover:border-paper/70 hover:bg-paper/5">
+            Ver galería
+            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-in-photo order-1 md:order-2 relative mb-8 md:mb-0">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="photo aspect-[4/5] rounded-3xl" data-label="Foto principal — guárdala como images/HERO.jpg">
+          <img src="images/HERO.jpg" alt="Sala y comedor del apartamento, North Point Lift, Bogotá"
+               class="w-full h-full object-cover kenburns" onerror="this.style.display='none'" />
+        </div>
+        <span class="mark mark-tl text-paper/25"></span>
+        <span class="mark mark-tr text-paper/25"></span>
+        <span class="mark mark-bl text-paper/25"></span>
+        <span class="mark mark-br text-paper/25"></span>
+
+        <div class="hero-in-badge absolute z-10 -bottom-6 left-5 md:-bottom-7 md:left-8 bg-paper text-ink rounded-2xl pl-3.5 pr-5 py-3 shadow-[0_20px_40px_-12px_rgba(19,33,26,.5)] flex items-center gap-3">
+          <span class="h-9 w-9 shrink-0 rounded-full bg-ink text-lime grid place-items-center material-symbols-outlined text-[18px] ms-fill">sell</span>
+          <div class="leading-tight">
+            <p class="font-mono font-bold text-lg leading-none">$2.700.000</p>
+            <p class="caps text-mist mt-1 text-[10px]">COP</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== SPECS — franja de datos ===================== -->
+<section class="bg-paper border-b border-ink/10">
+  <div class="max-w-container mx-auto px-5 md:px-8 grid grid-cols-2 md:grid-cols-4 divide-x divide-ink/10">
+    <div class="py-8 md:py-11 px-4 text-center">
+      <p class="font-mono font-semibold text-4xl md:text-5xl">1<span class="text-moss">+1</span></p>
+      <p class="caps text-mist mt-2.5">Habitación + estudio</p>
+    </div>
+    <div class="py-8 md:py-11 px-4 text-center">
+      <p class="font-mono font-semibold text-4xl md:text-5xl">1</p>
+      <p class="caps text-mist mt-2.5">Baño completo</p>
+    </div>
+    <div class="py-8 md:py-11 px-4 text-center border-t md:border-t-0 border-ink/10">
+      <p class="font-mono font-semibold text-4xl md:text-5xl">45<span class="text-moss text-2xl md:text-3xl">Mts</span></p>
+      <p class="caps text-mist mt-2.5">Área aproximada</p>
+    </div>
+    <div class="py-8 md:py-11 px-4 text-center border-t md:border-t-0 border-ink/10">
+      <p class="font-mono font-semibold text-4xl md:text-5xl">1</p>
+      <p class="caps text-mist mt-2.5">Parqueadero</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== APARTAMENTO / DESCRIPCIÓN ===================== -->
+<section id="apartamento" class="py-16 md:py-32 px-5 md:px-8">
+  <div class="max-w-container mx-auto grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
+    <div class="reveal order-2 md:order-1">
+      <p class="caps text-moss flex items-center gap-4">El apartamento <span class="h-px flex-1 max-w-[120px] bg-ink/15"></span></p>
+      <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] leading-[1.15] md:leading-[1.12] mt-4 md:mt-5 mb-5 tracking-tight">
+        Espacio abierto, luz natural y vista a los cerros
+      </h2>
+      <p class="text-mist leading-relaxed mb-8">
+        Cocina, comedor y sala en un solo ambiente, con ventanal de piso a techo hacia los cerros.
+        <strong class="text-ink font-bold">Se entrega sin amoblar</strong>, en edificio nuevo de 2025.
+      </p>
+      <ul class="border-t border-ink/10">
+        <li class="flex items-start gap-3.5 py-3.5 border-b border-ink/10"><span class="material-symbols-outlined text-lime bg-ink rounded-full p-1 text-[15px] mt-0.5 shrink-0">check</span><span>Cocina integral con campana, estufa de gas y horno empotrado</span></li>
+        <li class="flex items-start gap-3.5 py-3.5 border-b border-ink/10"><span class="material-symbols-outlined text-lime bg-ink rounded-full p-1 text-[15px] mt-0.5 shrink-0">check</span><span>Ventanal de piso a techo con vista a los cerros</span></li>
+        <li class="flex items-start gap-3.5 py-3.5 border-b border-ink/10"><span class="material-symbols-outlined text-lime bg-ink rounded-full p-1 text-[15px] mt-0.5 shrink-0">check</span><span>Habitación principal con clóset amplio</span></li>
+        <li class="flex items-start gap-3.5 py-3.5 border-b border-ink/10"><span class="material-symbols-outlined text-lime bg-ink rounded-full p-1 text-[15px] mt-0.5 shrink-0">check</span><span>Estudio independiente para home office</span></li>
+      </ul>
+    </div>
+    <div class="reveal order-1 md:order-2 relative">
+      <div class="photo aspect-[4/5] rounded-3xl" data-label="Vista / balcón — guárdala como images/08-vista.jpg">
+        <img src="images/08-vista.jpg" alt="Sala con ventanal y vista a los cerros orientales de Bogotá"
+             decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img" onerror="this.style.display='none'" />
+      </div>
+      <span class="mark mark-tl text-moss/50"></span>
+      <span class="mark mark-tr text-moss/50"></span>
+      <span class="mark mark-bl text-moss/50"></span>
+      <span class="mark mark-br text-moss/50"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PLANO ===================== -->
+<section id="plano" class="py-16 md:py-32 px-5 md:px-8 bg-stone">
+  <div class="max-w-container mx-auto">
+    <div class="mb-8 md:mb-12 reveal max-w-2xl">
+      <p class="caps text-moss flex items-center gap-4">Plano <span class="h-px w-24 bg-ink/15"></span></p>
+      <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] tracking-tight mt-4">Así se distribuye el espacio</h2>
+    </div>
+    <div class="relative max-w-3xl mx-auto reveal">
+      <div class="photo rounded-3xl bg-paper" data-label="Plano — guárdalo como images/plano.png">
+        <img src="images/plano.png" alt="Plano arquitectónico del apartamento: 1 habitación, 1 estudio, 1 baño, 45.80 m²"
+             decoding="async" class="w-full h-full object-contain" onerror="this.style.display='none'" />
+      </div>
+      <span class="mark mark-tl text-moss/50"></span>
+      <span class="mark mark-tr text-moss/50"></span>
+      <span class="mark mark-bl text-moss/50"></span>
+      <span class="mark mark-br text-moss/50"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALERÍA ===================== -->
+<section id="galeria" class="py-16 md:py-32 px-5 md:px-8 bg-paper">
+  <div class="max-w-container mx-auto">
+    <div class="mb-8 md:mb-12 reveal">
+      <p class="caps text-moss flex items-center gap-4">Galería <span class="h-px w-24 bg-ink/15"></span></p>
+      <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] tracking-tight mt-4">Conoce cada espacio</h2>
+      <p class="text-mist text-sm mt-3">Toca cualquier foto para ampliarla.</p>
+    </div>
+
+    <div class="grid grid-cols-2 lg:grid-cols-4 auto-rows-[46vw] sm:auto-rows-[200px] lg:auto-rows-[210px] gap-2.5 md:gap-3">
+      <!-- Sala (destacada) -->
+      <figure class="photo overflow-hidden rounded-2xl col-span-2 row-span-2 group reveal" data-label="Sala — images/02-sala.jpg">
+        <img src="images/02-sala.jpg" alt="Sala con sofá, comedor y cocina al fondo" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-4 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-10">Sala &amp; zona social</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl group reveal" data-label="Sala y comedor — images/11-social.jpg">
+        <img src="images/11-social.jpg" alt="Sala y comedor luminosos con ventanal y girasoles" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-3 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-8">Sala y comedor</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl group reveal" data-label="Cocina — images/04-cocina.jpg">
+        <img src="images/04-cocina.jpg" alt="Cocina equipada con campana, estufa de gas y horno" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-3 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-8">Cocina equipada</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl group reveal" data-label="Cocina integral — images/10-cocina-2.jpg">
+        <img src="images/10-cocina-2.jpg" alt="Cocina integral con nevera, horno y campana" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-3 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-8">Cocina integral</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl group reveal" data-label="Baño — images/09-bano.jpg">
+        <img src="images/09-bano.jpg" alt="Baño con ducha de vidrio, vanity y espejo" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-3 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-8">Baño</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl group reveal" data-label="Habitación — images/05-habitacion.jpg">
+        <img src="images/05-habitacion.jpg" alt="Habitación principal con ventanal y vista" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-3 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-8">Habitación principal</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl group reveal" data-label="Estudio — images/07-estudio.jpg">
+        <img src="images/07-estudio.jpg" alt="Estudio independiente con escritorio, guitarra y piano" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-3 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-8">Estudio / oficina</figcaption>
+      </figure>
+
+      <figure class="photo overflow-hidden rounded-2xl col-span-2 group reveal" data-label="Zona social — images/12-social.jpg">
+        <img src="images/12-social.jpg" alt="Zona social integrada: sala, comedor y cocina" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img transition-transform duration-700 group-hover:scale-105" onerror="this.style.display='none'" />
+        <figcaption class="absolute z-10 bottom-0 inset-x-0 p-4 text-white caps bg-gradient-to-t from-ink/85 to-transparent pt-10">Zona social integrada</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AMENIDADES ===================== -->
+<section id="amenidades" class="py-16 md:py-32 px-5 md:px-8 bg-stone">
+  <div class="max-w-container mx-auto">
+    <div class="mb-8 md:mb-14 reveal max-w-2xl">
+      <p class="caps text-moss flex items-center gap-4">El edificio <span class="h-px w-24 bg-ink/15"></span></p>
+      <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] tracking-tight mt-4">Zonas comunes North Point Lift</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 reveal">
+      <div class="rounded-2xl bg-paper p-5 md:p-6 border border-ink/5">
+        <span class="material-symbols-outlined text-lime text-[20px] bg-ink rounded-full p-2.5">fitness_center</span>
+        <p class="font-display font-semibold text-base md:text-lg mt-4">Gym</p>
+        <p class="text-mist text-sm mt-1 leading-relaxed">Gimnasio equipado en el edificio.</p>
+      </div>
+      <div class="rounded-2xl bg-paper p-5 md:p-6 border border-ink/5">
+        <span class="material-symbols-outlined text-lime text-[20px] bg-ink rounded-full p-2.5">business_center</span>
+        <p class="font-display font-semibold text-base md:text-lg mt-4">Coworking</p>
+        <p class="text-mist text-sm mt-1 leading-relaxed">Salas para el día a día remoto.</p>
+      </div>
+      <div class="rounded-2xl bg-paper p-5 md:p-6 border border-ink/5">
+        <span class="material-symbols-outlined text-lime text-[20px] bg-ink rounded-full p-2.5">yard</span>
+        <p class="font-display font-semibold text-base md:text-lg mt-4">Jardín VIP</p>
+        <p class="text-mist text-sm mt-1 leading-relaxed">Zona verde privada.</p>
+      </div>
+      <div class="rounded-2xl bg-paper p-5 md:p-6 border border-ink/5">
+        <span class="material-symbols-outlined text-lime text-[20px] bg-ink rounded-full p-2.5">concierge</span>
+        <p class="font-display font-semibold text-base md:text-lg mt-4">Lobby</p>
+        <p class="text-mist text-sm mt-1 leading-relaxed">Portería 24 horas.</p>
+      </div>
+      <div class="rounded-2xl bg-paper p-5 md:p-6 border border-ink/5">
+        <span class="material-symbols-outlined text-lime text-[20px] bg-ink rounded-full p-2.5">landscape</span>
+        <p class="font-display font-semibold text-base md:text-lg mt-4">Vista a los cerros</p>
+        <p class="text-mist text-sm mt-1 leading-relaxed">Los cerros, al pie del edificio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INCLUYE / CONDICIONES ===================== -->
+<section class="py-16 md:py-32 px-5 md:px-8 bg-ink text-paper">
+  <div class="max-w-container mx-auto grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
+    <div class="reveal">
+      <p class="caps text-lime flex items-center gap-4">Detalles de la venta <span class="h-px flex-1 max-w-[120px] bg-paper/20"></span></p>
+      <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] tracking-tight mt-4 md:mt-5 mb-7 md:mb-9">Todo claro, sin sorpresas</h2>
+      <dl class="rounded-2xl border border-paper/15 divide-y divide-paper/10 text-[15px] overflow-hidden">
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Precio de venta</dt>
+          <dd class="font-mono font-semibold text-2xl">$2.700.000</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Estado</dt>
+          <dd class="font-semibold text-lime text-right">Para estrenar (2025)</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Área privada</dt>
+          <dd class="font-mono">45 m²</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Parqueadero</dt>
+          <dd class="font-mono">1 incluido</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Entrega</dt>
+          <dd>Sin amoblar</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Mascotas</dt>
+          <dd class="font-semibold text-paper text-right">Se aceptan (gatos y perros)</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Depósito</dt>
+          <dd class="font-semibold text-right">No incluye</dd>
+        </div>
+      </dl>
+    </div>
+    <div class="reveal relative">
+      <div class="photo aspect-[4/5] rounded-3xl" data-label="Habitación — images/06-habitacion-2.jpg">
+        <img src="images/06-habitacion-2.jpg" alt="Habitación principal con clóset" decoding="async" class="w-full h-full object-cover cursor-zoom-in gallery-img" onerror="this.style.display='none'" />
+      </div>
+      <span class="mark mark-tl text-paper/25"></span>
+      <span class="mark mark-tr text-paper/25"></span>
+      <span class="mark mark-bl text-paper/25"></span>
+      <span class="mark mark-br text-paper/25"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== UBICACIÓN ===================== -->
+<section id="ubicacion" class="py-16 md:py-32 px-5 md:px-8">
+  <div class="max-w-container mx-auto">
+    <div class="grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
+      <div class="reveal">
+        <p class="caps text-moss flex items-center gap-4">Ubicación <span class="h-px flex-1 max-w-[120px] bg-ink/15"></span></p>
+        <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] leading-[1.15] md:leading-[1.12] tracking-tight mt-4 md:mt-5 mb-5">North Point, zona norte de Bogotá</h2>
+        <p class="text-mist leading-relaxed mb-7">
+          Carrera 6 # 155C‑50, en North Point City (Usaquén), al pie de los cerros orientales y cerca de la Autopista Norte.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/20 caps text-ink px-4 py-2.5"><span class="material-symbols-outlined text-[16px] text-moss">forest</span> Cerros orientales</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/20 caps text-ink px-4 py-2.5"><span class="material-symbols-outlined text-[16px] text-moss">directions_bus</span> Carrera 7ma</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/20 caps text-ink px-4 py-2.5"><span class="material-symbols-outlined text-[16px] text-moss">storefront</span> C.C. Palatino</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/20 caps text-ink px-4 py-2.5"><span class="material-symbols-outlined text-[16px] text-moss">alt_route</span> Vías principales</span>
+          <span class="inline-flex items-center gap-2 rounded-full border border-ink/20 caps text-ink px-4 py-2.5"><span class="material-symbols-outlined text-[16px] text-moss">park</span> Parque La Colina</span>
+        </div>
+        <button data-wa class="btn inline-flex items-center gap-2.5 rounded-full bg-ink text-paper caps px-7 py-4 hover:bg-ink-2">
+          <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
+          Preguntar disponibilidad
+        </button>
+      </div>
+      <div class="reveal relative aspect-square">
+        <iframe
+          title="Mapa North Point Lift, Carrera 6 # 155C-50, Bogotá"
+          class="w-full h-full grayscale-[35%] contrast-[.95] rounded-3xl"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Carrera%206%20%23155C-50%20Bogot%C3%A1&t=&z=15&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+        <span class="mark mark-tl text-moss/50"></span>
+        <span class="mark mark-tr text-moss/50"></span>
+        <span class="mark mark-bl text-moss/50"></span>
+        <span class="mark mark-br text-moss/50"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section id="contacto" class="py-16 md:py-32 px-5 md:px-8 bg-stone">
+  <div class="max-w-container mx-auto">
+    <div class="max-w-2xl mx-auto rounded-3xl bg-ink text-paper px-6 py-11 md:px-14 md:py-16 text-center reveal">
+      <p class="caps text-lime">Contacto</p>
+      <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] tracking-tight mt-3 md:mt-4 mb-4">¿Te interesa? Hablemos</h2>
+      <p class="text-paper/70 leading-relaxed max-w-md mx-auto mb-8">
+        Escríbeme por WhatsApp y coordinamos una visita.
+      </p>
+      <button data-wa class="btn w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold caps px-10 py-4 hover:bg-paper">
+        <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
+        Escríbeme por WhatsApp
+      </button>
+      <p class="caps text-paper/50 mt-6">+57 310 266 2404 · Trato directo con el propietario</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="bg-ink text-paper/60 py-10 md:py-12 px-5 md:px-8">
+  <div class="max-w-container mx-auto flex flex-col items-center gap-3 text-center">
+    <img src="images/logo-north-point-lift.png" alt="North Point Lift Apartamentos" class="h-10 w-10 rounded-full object-cover ring-1 ring-paper/15" />
+    <p class="caps text-paper/40">© <span id="year"></span> · Venta directa con el propietario</p>
+  </div>
+</footer>
+
+<!-- ===================== STICKY MOBILE CTA (aparece al pasar el hero) ===================== -->
+<div id="stickyCta" class="md:hidden fixed bottom-0 inset-x-0 z-40 px-3 pt-3">
+  <button data-wa class="btn w-full inline-flex items-center justify-center gap-2.5 rounded-full bg-lime text-ink font-bold caps py-4 shadow-[0_12px_35px_-6px_rgba(0,0,0,.55)]">
+    <span class="material-symbols-outlined text-[18px] ms-fill">chat</span>
+    Escríbeme por WhatsApp
+  </button>
+</div>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada del apartamento" aria-hidden="true">
+  <button class="lb-close material-symbols-outlined text-3xl" aria-label="Cerrar">close</button>
+  <button class="lb-nav lb-prev material-symbols-outlined text-3xl" aria-label="Foto anterior">chevron_left</button>
+  <img src="" alt="Foto ampliada del apartamento" />
+  <button class="lb-nav lb-next material-symbols-outlined text-3xl" aria-label="Foto siguiente">chevron_right</button>
+  <span class="lb-count" aria-hidden="true"></span>
+</div>
+
+<script>
+  (function () {
+    "use strict";
+    var WA = (window.WA_NUMBER || "").replace(/[^0-9]/g, "");
+    var DEFAULT_MSG = "Hola, vi la publicación del apartamento en venta en North Point Lift ($2.700.000) y me interesa. ¿Sigue disponible? Me gustaría agendar una visita.";
+
+    if (!WA || WA.indexOf("X") !== -1 || WA.length < 10) {
+      console.warn("⚠️ Configura tu número de WhatsApp en la línea: window.WA_NUMBER = \"57XXXXXXXXXX\";");
+    }
+
+    function waUrl(text) {
+      return "https://wa.me/" + WA + "?text=" + encodeURIComponent(text || DEFAULT_MSG);
+    }
+
+    // Wire all [data-wa] buttons
+    document.querySelectorAll("[data-wa]").forEach(function (el) {
+      el.addEventListener("click", function () { window.open(waUrl(), "_blank"); });
+    });
+
+    // Mobile menu
+    var menuBtn = document.getElementById("menuBtn");
+    var menuIcon = document.getElementById("menuIcon");
+    var mobileMenu = document.getElementById("mobileMenu");
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener("click", function () {
+        var open = mobileMenu.classList.toggle("hidden") === false;
+        menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (menuIcon) menuIcon.textContent = open ? "close" : "menu";
+      });
+      mobileMenu.querySelectorAll("a").forEach(function (a) {
+        a.addEventListener("click", function () {
+          mobileMenu.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+          if (menuIcon) menuIcon.textContent = "menu";
+        });
+      });
+    }
+
+    // Sticky CTA: se muestra solo tras pasar el hero (evita doble CTA en pantalla)
+    var stickyCta = document.getElementById("stickyCta");
+    var hero = document.getElementById("inicio");
+    if (stickyCta && hero && "IntersectionObserver" in window) {
+      var heroIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) stickyCta.classList.remove("show");
+          else stickyCta.classList.add("show");
+        });
+      }, { threshold: 0.35 });
+      heroIo.observe(hero);
+    } else if (stickyCta) {
+      stickyCta.classList.add("show");
+    }
+
+    // Lightbox con navegación
+    var lb = document.getElementById("lightbox");
+    var lbImg = lb.querySelector("img");
+    var lbCount = lb.querySelector(".lb-count");
+    var gallery = Array.prototype.slice.call(document.querySelectorAll(".gallery-img"))
+      .filter(function (img) { return img.getAttribute("src"); });
+    var current = 0;
+
+    function showLb(i) {
+      if (!gallery.length) return;
+      current = (i + gallery.length) % gallery.length;           // ciclo infinito
+      var img = gallery[current];
+      lbImg.src = img.getAttribute("src");
+      lbImg.alt = img.getAttribute("alt") || "Foto ampliada del apartamento";
+      lbCount.textContent = (current + 1) + " / " + gallery.length;
+    }
+    function openLb(i) { showLb(i); lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); }
+    function closeLb() { lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); lbImg.src = ""; }
+    function nextLb() { showLb(current + 1); }
+    function prevLb() { showLb(current - 1); }
+
+    gallery.forEach(function (img, i) {
+      img.addEventListener("click", function () { openLb(i); });
+    });
+
+    lb.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); nextLb(); });
+    lb.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); prevLb(); });
+    lb.addEventListener("click", function (e) {
+      if (e.target === lb || e.target.classList.contains("lb-close")) closeLb();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "Escape") closeLb();
+      else if (e.key === "ArrowRight") nextLb();
+      else if (e.key === "ArrowLeft") prevLb();
+    });
+
+    // Swipe en el lightbox (móvil)
+    var touchX = null;
+    lb.addEventListener("touchstart", function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", function (e) {
+      if (touchX === null) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 45) { dx < 0 ? nextLb() : prevLb(); }
+      touchX = null;
+    }, { passive: true });
+
+    // Reveal on scroll
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+    }
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
