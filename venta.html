@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport" />
-<title>Venta Apartamento — North Point Lift, Bogotá | $2.700.000</title>
-<meta name="description" content="Apartamento en venta en North Point Lift (Cra 6 #155C-50), zona norte de Bogotá. 1 habitación + estudio, 1 baño, parqueadero, ≈45 m², vista a los cerros. Para estrenar (2025). $2.700.000, trato directo con el propietario." />
-<meta property="og:title" content="Venta Apartamento — North Point Lift, Bogotá | $2.700.000" />
-<meta property="og:description" content="1 habitación + estudio · 1 baño · parqueadero · ≈45 m² · vista a los cerros. Para estrenar. $2.700.000, trato directo con el propietario." />
+<title>Arriendo Apartamento — North Point Lift, Bogotá | $2.700.000/mes</title>
+<meta name="description" content="Apartamento en arriendo en North Point Lift (Cra 6 #155C-50), zona norte de Bogotá. 1 habitación + estudio, 1 baño, parqueadero, ≈45 m², vista a los cerros. Para estrenar (2025). $2.700.000/mes, trato directo con el propietario." />
+<meta property="og:title" content="Arriendo Apartamento — North Point Lift, Bogotá | $2.700.000/mes" />
+<meta property="og:description" content="1 habitación + estudio · 1 baño · parqueadero · ≈45 m² · vista a los cerros. Para estrenar. $2.700.000/mes, trato directo con el propietario." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://north-point-lift.vercel.app/venta.html" />
 <meta property="og:image" content="https://north-point-lift.vercel.app/images/HERO.jpg" />
@@ -185,7 +185,7 @@
       <div class="hero-in-text order-2 md:order-1">
         <p class="caps text-lime flex items-center gap-2.5">
           <span class="live-dot inline-block h-2 w-2 rounded-full bg-lime"></span>
-          En venta · trato directo
+          En arriendo · trato directo
           <span class="h-px flex-1 max-w-[120px] bg-paper/20 ml-1"></span>
         </p>
 
@@ -401,12 +401,16 @@
 <section class="py-16 md:py-32 px-5 md:px-8 bg-ink text-paper">
   <div class="max-w-container mx-auto grid md:grid-cols-2 gap-10 lg:gap-20 items-center">
     <div class="reveal">
-      <p class="caps text-lime flex items-center gap-4">Detalles de la venta <span class="h-px flex-1 max-w-[120px] bg-paper/20"></span></p>
+      <p class="caps text-lime flex items-center gap-4">Detalles del arriendo <span class="h-px flex-1 max-w-[120px] bg-paper/20"></span></p>
       <h2 class="font-display font-semibold text-[1.75rem] md:text-[2.5rem] tracking-tight mt-4 md:mt-5 mb-7 md:mb-9">Todo claro, sin sorpresas</h2>
       <dl class="rounded-2xl border border-paper/15 divide-y divide-paper/10 text-[15px] overflow-hidden">
         <div class="flex items-center justify-between py-4 px-5">
-          <dt class="text-paper/60 shrink-0">Precio de venta</dt>
+          <dt class="text-paper/60 shrink-0">Precio de arriendo</dt>
           <dd class="font-mono font-semibold text-2xl">$2.700.000</dd>
+        </div>
+        <div class="flex items-center justify-between py-4 px-5">
+          <dt class="text-paper/60 shrink-0">Administración</dt>
+          <dd class="font-semibold text-lime text-right">Incluida</dd>
         </div>
         <div class="flex items-center justify-between py-4 px-5">
           <dt class="text-paper/60 shrink-0">Estado</dt>
@@ -507,7 +511,7 @@
 <footer class="bg-ink text-paper/60 py-10 md:py-12 px-5 md:px-8">
   <div class="max-w-container mx-auto flex flex-col items-center gap-3 text-center">
     <img src="images/logo-north-point-lift.png" alt="North Point Lift Apartamentos" class="h-10 w-10 rounded-full object-cover ring-1 ring-paper/15" />
-    <p class="caps text-paper/40">© <span id="year"></span> · Venta directa con el propietario</p>
+    <p class="caps text-paper/40">© <span id="year"></span> · Arriendo directo con el propietario</p>
   </div>
 </footer>
 
@@ -532,7 +536,7 @@
   (function () {
     "use strict";
     var WA = (window.WA_NUMBER || "").replace(/[^0-9]/g, "");
-    var DEFAULT_MSG = "Hola, vi la publicación del apartamento en venta en North Point Lift ($2.700.000) y me interesa. ¿Sigue disponible? Me gustaría agendar una visita.";
+    var DEFAULT_MSG = "Hola, vi la publicación del apartamento en arriendo en North Point Lift ($2.700.000/mes) y me interesa. ¿Sigue disponible? Me gustaría agendar una visita.";
 
     if (!WA || WA.indexOf("X") !== -1 || WA.length < 10) {
       console.warn("⚠️ Configura tu número de WhatsApp en la línea: window.WA_NUMBER = \"57XXXXXXXXXX\";");
